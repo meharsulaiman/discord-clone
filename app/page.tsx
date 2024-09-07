@@ -1,3 +1,10 @@
+import { Button } from '@/components/ui/button';
+
 export default function Home() {
-  return <p className='text-3xl font-bold'>Hello World</p>;
+  return (
+    <div>
+      <Button>Click me</Button>
+      <h1>Discord clone</h1>
+    </div>
+  );
 }
