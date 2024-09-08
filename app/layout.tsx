@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Open_Sans } from 'next/font/google';
 import './globals.css';
 import { ClerkProvider } from '@clerk/nextjs';
+import { ThemeProvider } from '@/components/theme-provider';
 
 const font = Open_Sans({
   subsets: ['latin'],
@@ -19,8 +20,19 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang='en'>
-        <body className={`${font.className} antialiased`}>{children}</body>
+      <html lang='en' suppressHydrationWarning>
+        <body
+          className={`${font.className} antialiased bg-white dark:bg-[#313338]`}
+        >
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='dark'
+            enableSystem={false}
+            storageKey='discord-theme'
+          >
+            {children}
+          </ThemeProvider>
+        </body>
       </html>
     </ClerkProvider>
   );
