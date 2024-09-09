@@ -59,8 +59,8 @@ export const CreateServerModal = () => {
       const serverId = data.data.id;
       form.reset();
       onClose();
-      router.push(`/servers/${serverId}`);
       router.refresh();
+      router.push(`/servers/${serverId}`);
     } catch (error) {
       console.error(error);
     }
