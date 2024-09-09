@@ -20,6 +20,9 @@ export default async function Setup() {
         },
       },
     },
+    orderBy: {
+      createdAt: 'asc',
+    },
   });
 
   if (server) {

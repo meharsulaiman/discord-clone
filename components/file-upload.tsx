@@ -1,6 +1,5 @@
 'use client';
 import React, { FC } from 'react';
-import '@uploadthing/react/styles.css';
 import { UploadDropzone } from '@/lib/uploadthing';
 import Image from 'next/image';
 import { X } from 'lucide-react';
@@ -17,7 +16,12 @@ const FileUpload: FC<FileUploadProps> = ({ onChange, value, endpoint }) => {
   if (value && fileType !== 'pdf') {
     return (
       <div className='relative h-20 w-20'>
-        <Image fill src={value} alt='Upload' className='rounded-full' />
+        <Image
+          fill
+          src={value}
+          alt='Upload'
+          className='rounded-full object-cover'
+        />
 
         <button
           onClick={() => onChange('')}
