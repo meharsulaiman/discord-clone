@@ -26,5 +26,9 @@ export default async function Setup() {
     return redirect(`/servers/${server.id}`);
   }
 
-  return <InitialModal />;
+  return (
+    <div className='h-full flex items-center justify-center'>
+      <InitialModal />
+    </div>
+  );
 }
