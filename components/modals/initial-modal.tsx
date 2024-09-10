@@ -3,7 +3,7 @@
 import axios from 'axios';
 import * as z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Dialog, DialogContent, DialogTitle } from '@radix-ui/react-dialog';
+import { Dialog, DialogContent, DialogTitle } from '../ui/dialog';
 import React from 'react';
 import { DialogDescription, DialogFooter, DialogHeader } from '../ui/dialog';
 import { useForm } from 'react-hook-form';
