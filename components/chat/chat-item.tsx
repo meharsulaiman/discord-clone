@@ -17,6 +17,7 @@ import { Input } from '../ui/input';
 import { Button } from '../ui/button';
 import axios from 'axios';
 import { useModal } from '@/hooks/use-modal-store';
+import { useParams, useRouter } from 'next/navigation';
 
 interface ChatItemProps {
   id: string;
@@ -57,9 +58,19 @@ const ChatItem = ({
 }: ChatItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
   const { onOpen } = useModal();
-  const [isDeleting, setIsDeleting] = useState(false);
+  const router = useRouter();
+  const params = useParams();
+
+  const onMemberClick = () => {
+    if (member.id === currentMember.id) {
+      return;
+    }
+
+    router.push(`/servers/${params?.serverId}/conversations/${member.id}`);
+  };
 
   useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const handleKeyDown = (event: any) => {
       if (event.key === 'Escape' || event.keyCode === 27) {
         setIsEditing(false);
@@ -120,7 +131,10 @@ const ChatItem = ({
         <div className='flex flex-col w-full'>
           <div className='flex items-center gap-x-2'>
             <div className='flex items-center'>
-              <p className='font-semibold text-sm hover:underline cursor-pointer'>
+              <p
+                className='font-semibold text-sm hover:underline cursor-pointer'
+                onClick={onMemberClick}
+              >
                 {member.profile.name}
               </p>
               <ActionTooltip label={member.role}>
