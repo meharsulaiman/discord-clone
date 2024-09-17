@@ -27,6 +27,7 @@ A modern, feature-rich Discord clone built with Next.js, TypeScript, and shadcn/
 - [Zod](https://github.com/colinhacks/zod)
 - [React Hook Form](https://react-hook-form.com/)
 - [uploadthing](https://uploadthing.com/)
+- [Livekit](https://livekit.io/)
 
 ## Database Schema
 
