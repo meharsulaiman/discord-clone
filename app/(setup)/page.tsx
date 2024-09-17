@@ -15,7 +15,6 @@ export default async function Setup() {
     where: {
       members: {
         some: {
-          // @ts-expect-error - TS doesn't know
           profileId: profile.id,
         },
       },
