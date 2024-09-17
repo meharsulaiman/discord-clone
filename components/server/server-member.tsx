@@ -20,7 +20,7 @@ interface ServerMemberProps {
   server: Server;
 }
 
-const ServerMember = ({ member, server }: ServerMemberProps) => {
+const ServerMember = ({ member }: ServerMemberProps) => {
   const params = useParams();
   const router = useRouter();
 
