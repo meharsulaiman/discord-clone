@@ -1,6 +1,6 @@
 # Discord Clone
 
-![Discord Clone UI](https://placeholder.com/ui-screenshot.png)
+![Discord Clone UI](./prisma//SS.png)
 
 A modern, feature-rich Discord clone built with Next.js, TypeScript, and shadcn/ui components. This project aims to replicate the core functionality and sleek design of Discord while showcasing the power of Next.js and related technologies.
 
